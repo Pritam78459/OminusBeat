@@ -17,7 +17,9 @@ import divider from './images/divider2.png';
 import stripbg from './images/stripbg';
 import Typography from '@material-ui/core/Typography';
 import titleimg from './images/title.png';
-
+import * as $ from "jquery";
+import Player from "./Player";
+import Component from 'react';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -68,6 +70,7 @@ grids : {
 }
 
 }));
+
 
 export default function DisabledTabs() {
     const classes = useStyles();
@@ -136,6 +139,9 @@ export default function DisabledTabs() {
         ))}
       </GridList>
     </div>
+    </Grid>
+    <Grid item>
+      
     </Grid>
     
       
