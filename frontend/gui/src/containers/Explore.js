@@ -2,10 +2,11 @@ import React from 'react';
 import axios from 'axios';
 import Navbar from '../components/Navbar';
 import Grid from '@material-ui/core/Grid';
-import Title from '../components/Title';
+import explore_img from '../components/images/explore.png';
 
 
-class MusicList extends React.Component {
+
+class Explore extends React.Component {
 
     
     
@@ -35,8 +36,9 @@ class MusicList extends React.Component {
               <Grid item xs={12}>
             <Navbar/>
               </Grid>
-              <Grid item xs={12} style={{marginTop:"10%"}} >
-                <Title  />
+              <Grid item xs={12} style={{marginTop:"5%"}} >
+                 
+                <img src={explore_img} alt='explore'/>
               </Grid>
             </Grid>
             
@@ -44,4 +46,4 @@ class MusicList extends React.Component {
     }
 }
 
-export default MusicList;
+export default Explore;
