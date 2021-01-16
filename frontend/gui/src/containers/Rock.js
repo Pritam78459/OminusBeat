@@ -40,7 +40,7 @@ class Rock extends React.Component {
               <Grid item xs={12} style={{marginTop:"5%"}} >
                 <img src={rock_title} alt='rock'/>
               </Grid>
-              <Grid item xs ={12} style={{marginTop:"3%"}} >
+              <Grid item xs ={12} style={{marginTop:"2%"}} >
                   <MusicControlCard  />
               </Grid>
             </Grid>

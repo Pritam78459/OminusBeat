@@ -9,12 +9,17 @@ import SkipPreviousIcon from '@material-ui/icons/SkipPrevious';
 import PlayArrowIcon from '@material-ui/icons/PlayArrow';
 import SkipNextIcon from '@material-ui/icons/SkipNext';
 import codered from './musicthumbnails/rock/codered.jpg';
+import { createMuiTheme, ThemeProvider } from '@material-ui/core';
+import AudioPlayer from 'material-ui-audio-player';
+import music from '../Music/rock/AC_DC - Code Red (Official Audio).mp3';
+
+const muiTheme = createMuiTheme({});
 
 const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
     height:220,
-    width:450,
+    width:550,
   },
   details: {
     display: 'flex',
@@ -55,17 +60,19 @@ export default function MusicControlCard() {
             AC/DC
           </Typography>
         </CardContent>
-        <div className={classes.controls}>
-          <IconButton aria-label="previous">
-            {theme.direction === 'rtl' ? <SkipNextIcon /> : <SkipPreviousIcon />}
-          </IconButton>
-          <IconButton aria-label="play/pause">
-            <PlayArrowIcon className={classes.playIcon} />
-          </IconButton>
-          <IconButton aria-label="next">
-            {theme.direction === 'rtl' ? <SkipPreviousIcon /> : <SkipNextIcon />}
-          </IconButton>
-        </div>
+        <ThemeProvider theme={muiTheme}>
+        <AudioPlayer 
+        elevation={1}
+    width="100%"
+    variation="default"
+    spacing={6}
+    download={true}
+    autoplay={true}
+    order="standart"
+    preload="auto"
+    loop={true}
+     src={music} />
+        </ThemeProvider>;
       </div>
       <CardMedia
         className={classes.cover}
