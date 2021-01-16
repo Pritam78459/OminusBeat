@@ -3,6 +3,7 @@ import axios from 'axios';
 import Navbar from '../components/Navbar';
 import Grid from '@material-ui/core/Grid';
 import explore_img from '../components/images/explore.png';
+import GenereTile from '../components/ExploreTile';
 
 
 
@@ -37,8 +38,10 @@ class Explore extends React.Component {
             <Navbar/>
               </Grid>
               <Grid item xs={12} style={{marginTop:"5%"}} >
-                 
                 <img src={explore_img} alt='explore'/>
+              </Grid>
+              <Grid item xs ={12}>
+                  <GenereTile/>
               </Grid>
             </Grid>
             
