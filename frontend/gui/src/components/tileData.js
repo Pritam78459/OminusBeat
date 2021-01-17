@@ -11,43 +11,51 @@ import synth from './musicthumbnails/synth.jpg';
 const tileData = [
     {
       img: blues,
-      title: 'Blues',
+      title: 'blues',
       author: 'Blues music',
+      link : '/blues'
     },
     {
       img: rock,
       title: 'rock',
       author: 'rock music',
+      link : '/rock'
     },
     {
       img: synth,
       title: 'synthwave',
       author: 'synthwave music',
+      link : '/synthwave'
     },
     {
       img: pop,
       title: 'pop',
       author: 'pop music',
+      link : '/pop'
     },
     {
       img: rap,
       title: 'rap',
       author: 'rap music',
+      link : '/rap'
     },
     {
       img: classical,
       title: 'classical',
       author: 'classical music',
+      link : '/classical'
     },
     {
       img: hiphop,
       title: 'hiphop',
       author: 'hiphop music',
+      link : '/hiphop'
     },
     {
       img: metal,
       title: 'metal',
       author: 'metalmusic',
+      link : '/metal'
     },
   ];
 

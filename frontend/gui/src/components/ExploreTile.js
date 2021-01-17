@@ -7,6 +7,7 @@ import ListSubheader from '@material-ui/core/ListSubheader';
 import IconButton from '@material-ui/core/IconButton';
 import InfoIcon from '@material-ui/icons/Info';
 import tileData from './tileData';
+import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -56,7 +57,7 @@ export default function GenereTile() {
           <ListSubheader className={classes.titlecolor} component="div">Generes</ListSubheader>
         </GridListTile>
         {tileData.map((tile) => (
-          <GridListTile key={tile.img}>
+          <GridListTile to={tile.link} component={Link}  key={tile.img}>
             <img src={tile.img} alt={tile.title} />
             <GridListTileBar
               title={tile.title}
