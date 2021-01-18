@@ -13,6 +13,7 @@ import { createMuiTheme, ThemeProvider } from '@material-ui/core';
 import AudioPlayer from 'material-ui-audio-player';
 import music from '../Music/rock/AC_DC - Code Red (Official Audio).mp3';
 
+
 const muiTheme = createMuiTheme({});
 
 const useStyles = makeStyles((theme) => ({
@@ -20,6 +21,9 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     height:160,
     width:980,
+    backgroundColor:"grey",
+
+    
   },
   details: {
     display: 'flex',
@@ -61,25 +65,27 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-export default function MusicControlCard() {
+export default function MusicControlCard(props) {
   const classes = useStyles();
   const theme = useTheme();
+  console.log(music);
 
   return (
     <Card className={classes.root}>
       <CardMedia
         className={classes.cover}
-        image={codered}
-        title="AC DC code red"
+        image={props.img}
+        title={props.title}
         
       />
+      
       <div className={classes.details}>
         <CardContent className={classes.content}>
           <Typography component="h5" variant="h5">
-            Code Red
+            {props.title}
           </Typography>
           <Typography variant="subtitle1" color="textSecondary">
-            AC/DC
+            {props.author}
           </Typography>
           
         </CardContent>
@@ -96,7 +102,7 @@ export default function MusicControlCard() {
         order="standart"
         preload="auto"
         loop={true}
-        src={music}
+        src={props.path}
         className={classes.player}
         width="90%"
         height="80%"

@@ -4,6 +4,7 @@ import Navbar from '../components/Navbar';
 import Grid from '@material-ui/core/Grid';
 import rock_title from '../components/musicthumbnails/rock/title.png';
 import MusicControlCard from '../components/MusicCard';
+import MusicFeed from '../components/MusicFeed';
 
 
 
@@ -40,8 +41,8 @@ class Rock extends React.Component {
               <Grid item xs={12} style={{marginTop:"5%"}} >
                 <img src={rock_title} alt='rock'/>
               </Grid>
-              <Grid item xs ={12} style={{marginTop:"2%"}} >
-                  <MusicControlCard  />
+              <Grid item xs={12} style={{marginTop:"2%"}} >
+                  <MusicFeed/>
               </Grid>
             </Grid>
             
