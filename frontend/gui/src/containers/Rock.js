@@ -5,13 +5,16 @@ import Grid from '@material-ui/core/Grid';
 import rock_title from '../components/musicthumbnails/rock/title.png';
 import MusicControlCard from '../components/MusicCard';
 import MusicFeed from '../components/MusicFeed';
+import { Fragment } from 'react';
+import Playlist from '../components/Playlist';
+import Player from '../components/Player';
 
 
 
 class Rock extends React.Component {
 
-    
-    
+
+
 
 
     state = {
@@ -19,34 +22,40 @@ class Rock extends React.Component {
     }
 
     componentDidMount() {
-        axios.get('http://127.0.0.1:8000/api/')
-        .then(res => {
-            this.setState({
-                music: res.data
-            });
-            console.log(res.data)
-        })
+        axios.get('http://127.0.0.1:8000/api/song/')
+            .then(res => {
+                this.setState({
+                    music: res.data
+                });
+                console.log(res.data)
+            })
     };
 
-  
+
 
 
 
     render() {
         return (
-            <Grid container align="center">
-              <Grid item xs={12}>
-            <Navbar/>
-              </Grid>
-              <Grid item xs={12} style={{marginTop:"5%"}} >
-                <img src={rock_title} alt='rock'/>
-              </Grid>
-              <Grid item xs={12} style={{marginTop:"2%"}} >
-                  <MusicFeed/>
-              </Grid>
-            </Grid>
-            
-        )        
+            <Fragment>
+                <div class="row">
+                    <div class="col-sm-12"><Navbar /></div>
+
+                </div>
+                <hr />
+                <div class="row  ">
+                    <div class="col-sm-2 jumbotron "><Playlist /></div>
+                    <hr />
+                    <div class="col-sm-10"><MusicFeed music={this.state.music} /></div>
+                </div>
+                <hr />
+                <footer className="jumbotron" style={{ position: 'bottom', marginTop: '26%' }} >
+                    <div><Player /></div>
+
+                </footer>
+            </Fragment >
+
+        )
     }
 }
 

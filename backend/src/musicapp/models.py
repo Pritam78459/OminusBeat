@@ -1,22 +1,12 @@
 from django.db import models
-
-# Create your models here.
-
-
-class User(models.Model):
-    username = models.CharField(max_length=50, unique=True, null=False)
-    email = models.EmailField(max_length=250, null=False)
-    password = models.CharField(max_length=50, null=False)
-    age = models.IntegerField(null=False)
-
-    def __str__(self):
-        return self.username
+from django.contrib.auth.models import User
 
 
-class Songs(models.Model):
+class Song(models.Model):
+    songpath = models.CharField(max_length=500, unique=True, null=False)
     songname = models.CharField(max_length=50, unique=True, null=False)
-    artist = models.CharField(max_length=10, unique=True, null=False)
-    category = models.CharField(max_length=10, unique=True, null=False)
+    artist = models.CharField(max_length=50, unique=True, null=False)
+    category = models.CharField(max_length=10, null=False)
 
     def __str__(self):
         return self.songname
@@ -32,9 +22,6 @@ class UserPlaylists(models.Model):
 
 
 class PlaylistSongs(models.Model):
-    song = models.ForeignKey(Songs, null=True, on_delete=models.SET_NULL)
+    song = models.ForeignKey(Song, null=True, on_delete=models.SET_NULL)
     playlist = models.ForeignKey(
         UserPlaylists, null=True, on_delete=models.SET_NULL)
-
-    def __str__(self):
-        return self.song
