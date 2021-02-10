@@ -14,7 +14,7 @@ export default function Player() {
   ]
 
   return (
-    <div >
+    <div className="jumbotron" >
       <audio style={{ width: '100%' }} controls="controls">
         <source src='/Music/rock/AC_DC - Code Red (Official Audio).mp3' />
       </audio>

@@ -49,10 +49,6 @@ class Rock extends React.Component {
                     <div class="col-sm-10"><MusicFeed music={this.state.music} /></div>
                 </div>
                 <hr />
-                <footer className="jumbotron" style={{ position: 'bottom', marginTop: '26%' }} >
-                    <div><Player /></div>
-
-                </footer>
             </Fragment >
 
         )
