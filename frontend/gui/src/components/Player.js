@@ -1,4 +1,5 @@
 import React from 'react'
+import '../App.css'
 
 
 export default function Player() {
@@ -14,8 +15,10 @@ export default function Player() {
   ]
 
   return (
-    <div className="jumbotron" >
+    <div className="container-fluid bg-secondary p-2" style={{ height: '10%', padding: '0 !important', textAlign: 'center' }} >
+      <marquee><h4 className="disply-4">Music Name</h4></marquee>
       <audio style={{ width: '100%' }} controls="controls">
+
         <source src='/Music/rock/AC_DC - Code Red (Official Audio).mp3' />
       </audio>
     </div>

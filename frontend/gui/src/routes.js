@@ -1,5 +1,5 @@
 import React from 'react';
-import {Route} from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import Explore from './containers/Explore';
 import OminusBeatMusic from './containers/OminusBeatMusic';
 import Rock from './containers/Rock';
@@ -15,7 +15,7 @@ import Classical from './containers/Classical';
 
 
 
-const BaseRouter= () => (
+const BaseRouter = () => (
     <div>
         <Route exact path='/' component={OminusBeatMusic} />
         <Route exact path='/explore' component={Explore} />
@@ -27,7 +27,7 @@ const BaseRouter= () => (
         <Route exact path='/hiphop' component={Hiphop} />
         <Route exact path='/classical' component={Classical} />
         <Route exact path='/synthwave' component={Synthwave} />
-        
+
     </div>
 )
 

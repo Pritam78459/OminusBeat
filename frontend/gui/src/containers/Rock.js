@@ -8,6 +8,8 @@ import MusicFeed from '../components/MusicFeed';
 import { Fragment } from 'react';
 import Playlist from '../components/Playlist';
 import Player from '../components/Player';
+import playerback from '../UI Images/playerback.jpg';
+import btn from '../UI Images/button.png';
 
 
 
@@ -37,21 +39,37 @@ class Rock extends React.Component {
 
     render() {
         return (
-            <Fragment>
-                <div class="row">
-                    <div class="col-sm-12"><Navbar /></div>
 
-                </div>
-                <hr />
-                <div class="row  ">
-                    <div class="col-sm-2 jumbotron "><Playlist /></div>
-                    <hr />
-                    <div class="col-sm-10"><MusicFeed music={this.state.music} /></div>
-                </div>
-                <hr />
-            </Fragment >
 
-        )
+            <div className="container-fluid d-flex  flex-column justify-content-center align-items-center" style={{ height: '91vh', backgroundImage: 'url(' + playerback + ')', backgroundSize: 'cover' }}>
+                <h1 className="display-4 text-center font-weight-bold text-danger">Music Feed</h1>
+                <div className="container d-flex justify-content-center">
+                    <ul class="list-group text-danger w-50" style={{ textShadow: '3px 3px 10px red', fontSize: '20px' }}>
+                        <li class="list-group-item bg-transparent
+                         border-light border-left-0 border-right-0 "><b>song1
+                            <span className="float-right">4:00 &nbsp;
+                        <img src={btn} className="img-fluid" style={{ width: 25 }} />
+                                </span></b></li>
+                        <li class="list-group-item bg-transparent border-light border-left-0 border-right-0"><b>song2
+                            <span className="float-right">4:00 &nbsp;
+                        <img src={btn} className="img-fluid" style={{ width: 25 }} />
+                            </span></b></li>
+                        <li class="list-group-item bg-transparent border-light border-left-0 border-right-0"><b>song3
+                            <span className="float-right">4:00 &nbsp;
+                        <img src={btn} className="img-fluid" style={{ width: 25 }} />
+                            </span></b></li>
+                        <li class="list-group-item bg-transparent border-light border-left-0 border-right-0"><b>song4
+                            <span className="float-right">4:00 &nbsp;
+                        <img src={btn} className="img-fluid" style={{ width: 25 }} /></span></b></li>
+                        <li class="list-group-item bg-transparent border-light border-left-0 border-right-0"><b>song5
+                            <span className="float-right">4:00 &nbsp;
+                        <img src={btn} className="img-fluid" style={{ width: 25 }} /></span></b></li>
+                    </ul>
+                </div>
+
+            </div>
+
+        );
     }
 }
 
