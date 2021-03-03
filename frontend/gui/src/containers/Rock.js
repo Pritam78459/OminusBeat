@@ -18,7 +18,6 @@ class Rock extends React.Component {
 
 
 
-
     state = {
         music: []
     }
@@ -36,38 +35,26 @@ class Rock extends React.Component {
 
 
 
-
     render() {
         return (
 
+            <div style={{ backgroundImage: 'url(' + playerback + ')', backgroundSize: 'cover' }} >
+                <div className="container-fluid d-flex  flex-column justify-content-center align-items-center" style={{ height: '91vh', marginTop: '5%', marginBottom: '10%' }}>
+                    <h1 className="display-4 text-center font-weight-bold text-danger">Music Feed</h1>
+                    <div className="container d-flex justify-content-center" style={{ height: '100%' }}>
+                        <ul className="list-group text-danger w-50" style={{ textShadow: '3px 3px 10px red', fontSize: '20px' }}>
+                            {this.state.music.map((song) =>
+                                <li className="list-group-item bg-transparent
+                         border-light border-left-0 border-right-0 "><b>{song.songname}
+                                        <span className="float-right">{song.songlength} &nbsp;
+                        <button><img src={btn} className="img-fluid" style={{ width: 25 }} ></img></button>
+                                        </span></b></li>
+                            )}
+                        </ul>
+                    </div>
 
-            <div className="container-fluid d-flex  flex-column justify-content-center align-items-center" style={{ height: '91vh', backgroundImage: 'url(' + playerback + ')', backgroundSize: 'cover' }}>
-                <h1 className="display-4 text-center font-weight-bold text-danger">Music Feed</h1>
-                <div className="container d-flex justify-content-center">
-                    <ul class="list-group text-danger w-50" style={{ textShadow: '3px 3px 10px red', fontSize: '20px' }}>
-                        <li class="list-group-item bg-transparent
-                         border-light border-left-0 border-right-0 "><b>song1
-                            <span className="float-right">4:00 &nbsp;
-                        <img src={btn} className="img-fluid" style={{ width: 25 }} />
-                                </span></b></li>
-                        <li class="list-group-item bg-transparent border-light border-left-0 border-right-0"><b>song2
-                            <span className="float-right">4:00 &nbsp;
-                        <img src={btn} className="img-fluid" style={{ width: 25 }} />
-                            </span></b></li>
-                        <li class="list-group-item bg-transparent border-light border-left-0 border-right-0"><b>song3
-                            <span className="float-right">4:00 &nbsp;
-                        <img src={btn} className="img-fluid" style={{ width: 25 }} />
-                            </span></b></li>
-                        <li class="list-group-item bg-transparent border-light border-left-0 border-right-0"><b>song4
-                            <span className="float-right">4:00 &nbsp;
-                        <img src={btn} className="img-fluid" style={{ width: 25 }} /></span></b></li>
-                        <li class="list-group-item bg-transparent border-light border-left-0 border-right-0"><b>song5
-                            <span className="float-right">4:00 &nbsp;
-                        <img src={btn} className="img-fluid" style={{ width: 25 }} /></span></b></li>
-                    </ul>
                 </div>
-
-            </div>
+            </div >
 
         );
     }

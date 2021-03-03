@@ -5,8 +5,9 @@ from django.contrib.auth.models import User
 class Song(models.Model):
     songpath = models.CharField(max_length=500, unique=True, null=False)
     songname = models.CharField(max_length=50, unique=True, null=False)
-    artist = models.CharField(max_length=50, unique=True, null=False)
+    artist = models.CharField(max_length=50, null=False)
     category = models.CharField(max_length=10, null=False)
+    songlength = models.CharField(max_length=10, null=False, default='04:00')
 
     def __str__(self):
         return self.songname
